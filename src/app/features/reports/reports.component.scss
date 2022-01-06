@@ -1,0 +1,18 @@
+@import "../../../assets/styles/styles.scss";
+.whiteBgWrapper {
+  .tableWrapper {
+    width: 100%;
+    margin-top: 15px;
+    .mat-table {
+      width: 100%;
+    }
+  }
+  ::ng-deep .mat-form-field {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      .mat-form-field-underline {
+        bottom: 0;
+      }
+    }
+  }
+}

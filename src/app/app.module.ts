@@ -1,15 +1,31 @@
-import { NgModule } from '@angular/core';
+import { MapModule } from './features/map/map.module';
+
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { AuthModule } from './core/auth/auth.module';
+import { NavigationComponent } from './core/components/navigation/navigation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AuthModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    ChartsModule,
+    MapModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

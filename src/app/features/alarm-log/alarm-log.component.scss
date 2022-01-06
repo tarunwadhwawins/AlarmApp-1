@@ -1,0 +1,7 @@
+@import "../../../assets/styles/styles.scss";
+
+.alarmLogWrapper {
+  background-color: #fafafa;
+  height: calc(100vh - 64px);
+  overflow: auto;
+}

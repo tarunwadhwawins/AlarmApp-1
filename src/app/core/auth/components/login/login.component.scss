@@ -1,0 +1,62 @@
+@import "../../../../../assets/styles/media-queries";
+@import "../../../../../assets/styles/styles.scss";
+
+form{
+  &.loginFormWrap {
+    display: flex;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    .loginLogo {
+      background-color: #0075c1;
+      padding: inherit;
+      text-align: center;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 235px;
+      align-items: center;
+      h3{
+        color: #ffffff;
+        text-transform: uppercase;
+        font-size: 32px;
+      }
+      img{
+        width: 90px;
+      }
+    }
+    .loginForm {
+      padding: 20px 30px;
+      width: 100%;
+      h3{
+        font-weight: 400;
+        text-align: center;
+        margin-top: 0;
+      }
+      mat-form-field{
+        width: 100%;
+      }
+      .loginBtn {
+        text-align: right;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+::ng-deep{
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: #0075c1;
+  }
+}
+

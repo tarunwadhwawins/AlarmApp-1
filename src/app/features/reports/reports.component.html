@@ -1,0 +1,58 @@
+<div class="whiteBgWrapper">
+  <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <h2>Reports</h2>
+  </div>
+  <app-header-filter></app-header-filter>
+  <div class="tableWrapper summaryTable">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="Timestamp">
+        <th mat-header-cell *matHeaderCellDef> Timestamp </th>
+        <td mat-cell *matCellDef="let element"> {{element.Timestamp}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Devicename">
+        <th mat-header-cell *matHeaderCellDef> Device Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.Devicename}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Alarmpriority">
+        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+        <td mat-cell *matCellDef="let element"> {{element.Alarmpriority}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Alarmstatus">
+        <th mat-header-cell *matHeaderCellDef> Alarm Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.Alarmstatus}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Acknowledgestatus">
+        <th mat-header-cell *matHeaderCellDef> Acknowledge Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.Acknowledgestatus}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Alarmvalue">
+        <th mat-header-cell *matHeaderCellDef> Alarm Value </th>
+        <td mat-cell *matCellDef="let element"> {{element.Alarmvalue}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Alarmunit">
+        <th mat-header-cell *matHeaderCellDef> Alarm Unit </th>
+        <td mat-cell *matCellDef="let element"> {{element.Alarmunit}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Alerttype">
+        <th mat-header-cell *matHeaderCellDef>Alert Type </th>
+        <td mat-cell *matCellDef="let element"> {{element.Alerttype}} </td>
+      </ng-container>
+      <ng-container matColumnDef="Actiontaken">
+        <th mat-header-cell *matHeaderCellDef> Action Taken </th>
+        <td mat-cell *matCellDef="let element"> {{element.Actiontaken}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+  </div>
+</div>

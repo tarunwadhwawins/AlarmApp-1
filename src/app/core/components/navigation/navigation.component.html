@@ -1,0 +1,62 @@
+<mat-toolbar class="headerNavigation" color="primary" fxLayout="row" fxLayoutAlign="start center">
+  <div class="headerIcon">
+    <ul>
+      <li>
+        <mat-icon>language</mat-icon> Language
+      </li>
+      <li>
+        <mat-icon>settings</mat-icon>
+      </li>
+    </ul>
+  </div>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="'navigation'" [disableClose]="true">
+
+    <mat-nav-list style="border-top: 1px solid #ddd;">
+      <div class="logoImage"><img style="height: 35px;" src="assets/images/logo-1.png" /></div>
+      <a class="menuItems humburgOuter" mat-list-item>
+        <img src="assets/icons/hamburger-border.svg" alt="Humburg Image">
+      </a>
+
+      <ng-container>
+        <a matTooltipPosition="after" [matTooltip]="menu" routerLink="/map" class="menuItems"
+          routerLinkActive="is-active" mat-list-item>
+          <div class="sidenav-menu-icons">
+            <mat-icon> map</mat-icon>
+            <span>Map View</span>
+          </div>
+        </a>
+        <a matTooltipPosition="after" class="menuItems" routerLink="/log" mat-list-item>
+          <div class="sidenav-menu-icons">
+            <mat-icon>access_alarm</mat-icon>
+            <span>Alarm Summary</span>
+          </div>
+        </a>
+        <a matTooltipPosition="after" routerLink="/dashboard" class="menuItems" mat-list-item>
+          <div class="sidenav-menu-icons">
+            <mat-icon> show_chart</mat-icon>
+            <span>Dashboard</span>
+          </div>
+        </a>
+        <a matTooltipPosition="after" routerLink="/report" class="menuItems" mat-list-item>
+          <div class="sidenav-menu-icons">
+            <mat-icon>description</mat-icon>
+            <span>Reports</span>
+          </div>
+        </a>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+
+
+
+  <mat-sidenav-content>
+    <div class="container" id="boundryContainer">
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

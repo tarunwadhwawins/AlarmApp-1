@@ -1,0 +1,81 @@
+<div class="whiteBgWrapper">
+  <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+    <h2>Dashboard</h2>
+  </div>
+  <app-header-filter></app-header-filter>
+
+  <mat-tab-group class="commonTab">
+    <mat-tab label="Facility Energy Dashboard">
+      <div class="dashboardChart">
+        <div style="display: block;" class="graph">
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+        </div>
+
+        <!-- line chart -->
+        <div style="display: block;" class="graph">
+          <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+            [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+            [plugins]="lineChartPlugins">
+          </canvas>
+        </div>
+        <!-- pie chart -->
+        <div style="display: block;" class="graph">
+          <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+            [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+          </canvas>
+        </div>
+        <!--doughnutChart  -->
+        <div style="display: block;" class="graph">
+          <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+          </canvas>
+        </div>
+        <!--radarChart  -->
+        <div style="display: block;" class="graph">
+          <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+            [chartType]="radarChartType">
+          </canvas>
+        </div>
+        <!-- polarchart -->
+        <div style="display: block;" class="graph">
+          <canvas baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend"
+            [chartType]="polarAreaChartType">
+          </canvas>
+        </div>
+      </div>
+    </mat-tab>
+
+
+
+    <mat-tab label="Facility Energy Dashboard by Month">
+      <div class="dashboardChart">
+        <div class="graph">
+          <h3>Carbon footprint</h3>
+          <ng9-odometer [number]="1000" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+        </div>
+        <div class="graph">
+          <h3>Energy cost</h3>
+          <ng9-odometer [number]="45062" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+        </div>
+        <div class="graph">
+          <h3>Energy Consumptions</h3>
+          <ng9-odometer [number]="25066" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+        </div>
+      </div>
+      <div class="dashboardChart graphFullWidth">
+        <div class="graph">
+          <h3>Energy Consumption Historical Graph</h3>
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+
+
+    </mat-tab>
+
+  </mat-tab-group>
+
+
+</div>

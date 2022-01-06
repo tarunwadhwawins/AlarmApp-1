@@ -1,0 +1,100 @@
+@import "../../../assets/styles/styles.scss";
+.dashboardChart {
+  // grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1.5rem;
+  background-color: #f5f3f3;
+  padding: 15px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  .graph {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+    canvas {
+      width: 100% !important;
+    }
+    h3 {
+      color: #2580eb;
+      font-weight: 500;
+      font-size: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    ng9-odometer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      ::ng-deep {
+        .odometer {
+          line-height: 40px;
+          .odometer-inside {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            .odometer-digit {
+              box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+              padding: 5px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 30px;
+              font-weight: 600;
+              margin: 0 10px;
+              border-radius: 5px;
+              color: #2580eb;
+              span {
+                height: 100%;
+                &.odometer-value {
+                  display: flex !important;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
+            }
+            .odometer-formatting-mark {
+              font-size: 30px;
+              font-weight: 600;
+              color: #2580eb;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.graphFullWidth {
+    grid-template-columns: repeat(1, 1fr);
+    canvas {
+      width: 100% !important;
+      height: 250px !important;
+    }
+  }
+}
+.odometerChart {
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    span {
+      // color: $app-primary-color;
+    }
+  }
+  .chart {
+    display: flex;
+    align-items: baseline;
+    padding-bottom: 20px;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .unit {
+    // color: $app-primary-color;
+    font-size: 15px;
+    position: relative;
+    font-weight: 500;
+    left: 5px;
+  }
+}
