@@ -1,4 +1,6 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-alarm-log',
@@ -7,15 +9,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlarmLogComponent implements OnInit {
   displayedColumns1: string[] = ['select','priority', 'timestamp', 'name','status', 'ackstatus', 'value', 'unit', 'type'];
-  dataSource1 = ELEMENT_DATA1;
+  dataSource1 = new MatTableDataSource<PeriodicElement1>(ELEMENT_DATA1);
+
 
   displayedColumns: string[] = ['select','priority', 'timestamp', 'name','description', 'explanation', 'action'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+  selection = new SelectionModel<PeriodicElement>(true, []);
+  selection1 = new SelectionModel<PeriodicElement1>(true, []);
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  isAllSelected1() {
+    const numSelected = this.selection1.selected.length;
+    const numRows = this.dataSource1.data.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle1() {
+    this.isAllSelected1() ?
+        this.selection1.clear() :
+        this.dataSource1.data.forEach(row => this.selection1.select(row));
   }
 
 }
@@ -43,12 +73,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 9', status:'Locked', ackstatus:'224', value:'335', unit:'unit', type:'type'},
   { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 10', status:'Unlocked', ackstatus:'453', value:'456', unit:'unit', type:'type'},
 ];
-
-
-
-
-
-
 
 export interface PeriodicElement1 {
   priority: string;
