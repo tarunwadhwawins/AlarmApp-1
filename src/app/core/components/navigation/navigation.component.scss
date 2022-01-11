@@ -47,7 +47,63 @@ mat-toolbar {
     }
   }
 }
+/* header language filter */
+.selectLanguageWrap {
+  ::ng-deep{
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+      .mat-form-field-infix {
+        border-top: none;
+        width: auto;
+        min-width: 110px;
+      }
+    }
+    .mat-form-field-underline{
+      display: none;
+    }
+  }
+}
 
+
+.dropDownMenu {
+  margin: 0;
+  padding: 5px 10px;
+  list-style: none;
+  li{
+    a{
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 8px 5px;
+      mat-icon{
+        margin-right: 2px;
+        font-size: 18px;
+        height: auto;
+      }
+      &:hover{
+        color: #2580eb;
+      }
+    }
+  }
+}
+.settingOption{
+  button{
+    background-color: transparent;
+    color: #000 !important;
+    border: none;
+    padding: 0;
+    min-width: auto;
+    &::ng-deep{
+      .mat-button-focus-overlay{
+        opacity: 0 !important;
+      }
+    }
+
+  }
+}
+
+/* mat sidebar */
 mat-sidenav-container {
   padding-left: 110px;
   .logoImage {

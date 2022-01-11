@@ -105,14 +105,54 @@ button {
           color: #2580eb;
         }
       }
+      button {
+        padding: 15px 15px;
+        margin-right: 10px;
+    }
+    }
+  }
+}
+/* header language filter */
+::ng-deep{
+  .dropDownwrappewer{
+    min-height: auto !important;
+  }
+}
+/* dropdown select */
+.chooseLanguage {
+  background: transparent;
+  &:hover,&.mat-active{
+    background: transparent !important;
+    color: #2580eb !important;
+  }
+}
+
+/* header filter */
+.dateValues {
+  border-radius: 5px;
+  display: flex;
+  margin:20px 0 10px;
+  padding: 0px 5px;
+  width: 100%;
+  .value {
+    margin: 0 12px 0 0;
+    select, input,mat-label {
+      cursor: pointer;
+      font-size: 13px;
+      color: #918f8f;
+      padding-left: 10px;
+    }
+    ::ng-deep{
+      .mat-form-field-infix{
+        border-top: 0 !important;
+        padding: 10px 0;
+      }
     }
   }
 }
 
-
 .whiteBgWrapper {
   padding: 15px;
-  // background-color: #fff;
   height: calc(100vh - 64px);
   overflow: auto;
 }

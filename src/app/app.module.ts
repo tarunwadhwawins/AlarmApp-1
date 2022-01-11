@@ -10,6 +10,7 @@ import { NavigationComponent } from './core/components/navigation/navigation.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { ChartsModule } from 'ng2-charts';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,11 @@ import { ChartsModule } from 'ng2-charts';
     BrowserAnimationsModule,
     SharedModule,
     ChartsModule,
-    MapModule
+    MapModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBboMD3ZzCcWPHhrv0WDIRVsU90xUTIez4'
+    })
+
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],

@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alarm-log.component.scss']
 })
 export class AlarmLogComponent implements OnInit {
-  displayedColumns: string[] = ['select','priority', 'timestamp', 'name','description', 'explanation', 'action'];
-  dataSource = ELEMENT_DATA;
-
   displayedColumns1: string[] = ['select','priority', 'timestamp', 'name','status', 'ackstatus', 'value', 'unit', 'type'];
   dataSource1 = ELEMENT_DATA1;
+
+  displayedColumns: string[] = ['select','priority', 'timestamp', 'name','description', 'explanation', 'action'];
+  dataSource = ELEMENT_DATA;
 
 
   constructor() { }

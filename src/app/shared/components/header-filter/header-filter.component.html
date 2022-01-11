@@ -2,22 +2,20 @@
   <div class="dateValues">
     <div class="value">
       <mat-form-field>
-        <select matNativeControl required>
-          <option value="volvo">Priority List</option>
-          <option value="saab">Choose Option 1</option>
-          <option value="mercedes">Choose Option 2</option>
-          <option value="audi">Choose Option 3</option>
-        </select>
+        <mat-select placeholder="Priority List">
+          <mat-option *ngFor="let PriorityList of list" [value]="PriorityList.value" class="chooseLanguage">
+            {{PriorityList.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="value">
       <mat-form-field>
-        <select matNativeControl required>
-          <option value="volvo">Alarm Status</option>
-          <option value="saab">Choose Option 1</option>
-          <option value="mercedes">Choose Option 2</option>
-          <option value="audi">Choose Option 3</option>
-        </select>
+        <mat-select placeholder="Alarm Status">
+          <mat-option *ngFor="let AlarmStatus of alarmlist" [value]="AlarmStatus.value" class="chooseLanguage">
+            {{AlarmStatus.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <div class="value">
@@ -38,7 +36,7 @@
     </div>
 
     <div class="value">
-      <button mat-button color="primary">Primary</button>
+      <button mat-button color="primary">Search</button>
     </div>
   </div>
 </div>

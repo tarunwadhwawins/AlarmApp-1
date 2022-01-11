@@ -2,10 +2,23 @@
   <div class="headerIcon">
     <ul>
       <li>
-        <mat-icon>language</mat-icon> Language
+        <mat-icon>language</mat-icon>
+        <mat-form-field class="selectLanguageWrap">
+          <mat-select placeholder="Language">
+            <mat-option *ngFor="let selectLanguage of language" [value]="selectLanguage.value" class="chooseLanguage">
+              {{selectLanguage.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </li>
-      <li>
-        <mat-icon>settings</mat-icon>
+      <li class="settingOption">
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>account_circle</mat-icon></button>
+        <mat-menu #menu="matMenu" class="dropDownwrappewer">
+          <ul class="dropDownMenu">
+            <li><a hrf="#"><mat-icon>lock_open</mat-icon> Change Password</a></li>
+            <li routerLink="/"><a hrf="javascript:void(0);"><mat-icon>power_settings_new</mat-icon> Logout</a></li>
+          </ul>
+        </mat-menu>
       </li>
     </ul>
   </div>

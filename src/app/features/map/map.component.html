@@ -2,38 +2,47 @@
   <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
     <h2>Map</h2>
   </div>
+  <div class="headerNavigation">
+    <div class="dateValues">
+      <div class="value">
+        <mat-form-field>
+          <mat-select placeholder="Country">
+            <mat-option *ngFor="let SelectCountry of country" [value]="SelectCountry.value" class="chooseLanguage">
+              {{SelectCountry.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="value">
+        <mat-form-field>
+          <mat-select placeholder="State">
+            <mat-option *ngFor="let SelectState of state" [value]="SelectState.value" class="chooseLanguage">
+              {{SelectState.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="value">
+        <mat-form-field>
+          <mat-label>Customer</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="value">
+        <mat-form-field>
+          <mat-label>IP Range/Site</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="value">
+        <button mat-button color="primary">Search</button>
+      </div>
+    </div>
+  </div>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
 
 </div>
-<div>
-  <!-- <agm-map
-  [latitude]="lat"
-  [longitude]="lng"
-  [zoom]="zoom"
-  [disableDefaultUI]="false"
-  (mapClick)="mapClicked($event)"
-  >
 
-  <agm-marker
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
-
-    <agm-info-window>
-      <strong>InfoWindow content</strong>
-    </agm-info-window>
-
-  </agm-marker>
-
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-      [radius]="5000"
-      [fillColor]="'red'"
-      [circleDraggable]="true"
-      [editable]="true">
-  </agm-circle>
-
-</agm-map> -->
-</div>
