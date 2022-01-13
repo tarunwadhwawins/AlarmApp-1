@@ -1,0 +1,22 @@
+<div class="dashboardChart">
+    <div class="graph">
+      <h3>Carbon footprint</h3>
+      <ng9-odometer [number]="1000" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+    </div>
+    <div class="graph">
+      <h3>Energy cost</h3>
+      <ng9-odometer [number]="45062" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+    </div>
+    <div class="graph">
+      <h3>Energy Consumptions</h3>
+      <ng9-odometer [number]="25066" [observable]="observable" [config]="config" [theme]="'minima'"></ng9-odometer>
+    </div>
+  </div>
+  <div class="dashboardChart graphFullWidth">
+    <div class="graph">
+      <h3>Energy Consumption Historical Graph</h3>
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>

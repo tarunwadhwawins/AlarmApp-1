@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 
+
 import { RouterModule, Routes } from '@angular/router';
-import { AlarmSummaryComponent } from './alarm-summary.component';
+import { AlarmComponent } from './alarm.component';
 
 const routes: Routes = [
-    { path: '', component: AlarmSummaryComponent },
+    { path: '', component: AlarmComponent },
   ];
   
   @NgModule({
@@ -12,4 +13,4 @@ const routes: Routes = [
     exports: [RouterModule]
   
 })
-export class AlarmSummaryRoutingModule { }
+export class AlarmRoutingModule { }

@@ -1,0 +1,23 @@
+<mat-card class="alarmLogWrapper">
+  <div fxLayout="row wrap" fxLayoutGap="15px grid">
+    <h2>Alarm Details</h2>
+  <div class="filterExportWrap">
+    <app-header-filter></app-header-filter>
+    <div class="exportIcon">
+      <a href="javascript:void(0);"><img src="assets/icons/pdf.svg" width="15"></a>
+      <a href="javascript:void(0);"><img src="assets/icons/excel.svg" width="24"></a>
+      <a href="javascript:void(0);"><img src="assets/icons/csv.svg" width="15"></a>
+    </div>
+  </div>
+  <mat-tab-group class="commonTab">
+    <mat-tab label="Alarm Summary">
+      <app-alarm-summary></app-alarm-summary>
+    </mat-tab>
+
+    <mat-tab label="Alarm Log">
+      <app-alarm-log></app-alarm-log>
+    </mat-tab>
+  </mat-tab-group>
+
+  </div>
+</mat-card>

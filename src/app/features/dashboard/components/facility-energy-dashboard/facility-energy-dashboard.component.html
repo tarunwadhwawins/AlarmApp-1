@@ -1,0 +1,38 @@
+<div class="dashboardChart">
+    <div style="display: block;" class="graph">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+
+    <!-- line chart -->
+    <div style="display: block;" class="graph">
+      <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+        [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+    <!-- pie chart -->
+    <div style="display: block;" class="graph">
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+        [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+      </canvas>
+    </div>
+    <!--doughnutChart  -->
+    <div style="display: block;" class="graph">
+      <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+      </canvas>
+    </div>
+    <!--radarChart  -->
+    <div style="display: block;" class="graph">
+      <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+        [chartType]="radarChartType">
+      </canvas>
+    </div>
+    <!-- polarchart -->
+    <div style="display: block;" class="graph">
+      <canvas baseChart [data]="polarAreaChartData" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend"
+        [chartType]="polarAreaChartType">
+      </canvas>
+    </div>
+  </div>

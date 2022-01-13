@@ -25,14 +25,11 @@ const routes: Routes = [
         loadChildren: () => import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
 
-      {
-        path: 'alarm',
-        loadChildren: () => import('./features/alarm-summary/alarm-summary.module').then((m) => m.AlarmSummaryModule),
-      },
+     
 
       {
         path: 'log',
-        loadChildren: () => import('./features/alarm-log/alarm-log.module').then((m) => m.AlarmLogModule),
+        loadChildren: () => import('./features/alarm/alarm.module').then((m) => m.AlarmModule),
       },
       {
         path: 'map',
