@@ -1,4 +1,5 @@
-import { FormsModule } from '@angular/forms';
+import { MapModalComponent } from './components/map-modal/map-modal.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,17 +9,20 @@ import { HeaderFilterComponent } from './components/header-filter/header-filter.
 
 
 @NgModule({
-  declarations: [HeaderFilterComponent],
+  declarations: [HeaderFilterComponent,MapModalComponent],
   imports: [
     CommonModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
     MaterialModule,
     HeaderFilterComponent,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MapModalComponent
   ]
 })
 export class SharedModule { }

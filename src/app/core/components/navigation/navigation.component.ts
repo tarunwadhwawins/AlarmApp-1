@@ -10,6 +10,7 @@ import {
 interface SelectLanguage {
   value: string;
   viewValue: string;
+
 }
 
 @Component({
@@ -22,6 +23,7 @@ interface SelectLanguage {
 export class NavigationComponent implements OnInit, AfterViewInit, OnDestroy {
 
   readonly availableLanguages: any[]= [{name: '日本語', value: 'Japanese'}, {name: 'English', value: 'English'}]
+  value='Eng'
 
   language: SelectLanguage[] = [
     {value: 'Eng', viewValue: 'English'},

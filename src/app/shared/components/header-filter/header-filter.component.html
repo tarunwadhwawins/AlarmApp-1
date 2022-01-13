@@ -1,38 +1,64 @@
 <div class="headerNavigation">
   <div class="dateValues">
     <div class="value">
-      <mat-form-field>
-        <mat-select placeholder="Priority List">
-          <mat-option *ngFor="let PriorityList of list" [value]="PriorityList.value" class="chooseLanguage">
-            {{PriorityList.viewValue}}
+      <mat-form-field class="example-full-width">
+        <input type="text"
+               placeholder="Priority List"
+               aria-label="Priority List"
+               matInput
+               [formControl]="PriorityList"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option" class="chooseLanguage">
+            {{option}}
           </mat-option>
-        </mat-select>
+        </mat-autocomplete>
+      </mat-form-field>
+
+    </div>
+    <div class="value">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+               placeholder="Alarm Status"
+               aria-label="Alarm Status"
+               matInput
+               [formControl]="AlarmStatus"
+               [matAutocomplete]="auto1">
+        <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+          <mat-option *ngFor="let option1 of filteredOptions1 | async" [value]="option1" class="chooseLanguage">
+            {{option1}}
+          </mat-option>
+        </mat-autocomplete>
       </mat-form-field>
     </div>
     <div class="value">
-      <mat-form-field>
-        <mat-select placeholder="Alarm Status">
-          <mat-option *ngFor="let AlarmStatus of alarmlist" [value]="AlarmStatus.value" class="chooseLanguage">
-            {{AlarmStatus.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="value">
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-label>Start Date</mat-label>
         <input matInput [matDatepicker]="picker2">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field> -->
+      <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker2" placeholder="Start Date" >
+
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
       </mat-form-field>
     </div>
     <div class="value">
-      <mat-form-field>
+      <!-- <mat-form-field>
         <mat-label>End Date</mat-label>
         <input matInput [matDatepicker]="picker1">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field> -->
+      <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker" placeholder="End Date" >
+
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
       </mat-form-field>
+
     </div>
 
     <div class="value">

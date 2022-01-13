@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+
 import { MapRoutingModule } from './map-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,6 @@ import { MapComponent } from './map.component';
     CommonModule,
     SharedModule,
     MapRoutingModule,
-    FormsModule,
     // GoogleMapsModule,
     AgmCoreModule
   ],

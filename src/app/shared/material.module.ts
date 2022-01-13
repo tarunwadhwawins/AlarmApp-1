@@ -31,7 +31,8 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule, DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,NgxMatNativeDateModule } from '@angular-material-components/datetime-picker';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 export const MY_DATE_FORMATS = {
@@ -49,6 +50,7 @@ export const MY_DATE_FORMATS = {
 const modules = [
   LayoutModule,
   MatToolbarModule,
+  MatAutocompleteModule,
   MatSliderModule,
   MatTableModule,
   MatCheckboxModule,
@@ -83,7 +85,10 @@ const modules = [
   MatNativeDateModule,
   MatButtonToggleModule,
   CdkTableModule,
-  MatDividerModule
+  MatDividerModule,
+  NgxMatDatetimePickerModule,
+  NgxMatTimepickerModule,
+  NgxMatNativeDateModule
 ];
 @NgModule({
   imports: [...modules],

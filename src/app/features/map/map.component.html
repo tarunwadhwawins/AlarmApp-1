@@ -1,32 +1,54 @@
 <div class="whiteBgWrapper">
-  <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
+  <!-- <div fxFlex="100%" fxFlex.md="100%" fxFlex.sm="100%" fxFlex.xs="100%">
     <h2>Map</h2>
-  </div>
+  </div> -->
   <div class="headerNavigation">
     <div class="dateValues">
       <div class="value">
-        <mat-form-field>
-          <mat-select placeholder="Country">
-            <mat-option *ngFor="let SelectCountry of country" [value]="SelectCountry.value" class="chooseLanguage">
-              {{SelectCountry.viewValue}}
+        <mat-form-field class="example-full-width">
+          <input type="text"
+                 placeholder="Customer"
+                 aria-label="Customer"
+                 matInput
+                 [formControl]="customerControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option" class="chooseLanguage">
+              {{option}}
             </mat-option>
-          </mat-select>
+          </mat-autocomplete>
         </mat-form-field>
       </div>
       <div class="value">
-        <mat-form-field>
-          <mat-select placeholder="State">
-            <mat-option *ngFor="let SelectState of state" [value]="SelectState.value" class="chooseLanguage">
-              {{SelectState.viewValue}}
+        <mat-form-field class="example-full-width">
+          <input type="text"
+                 placeholder="Country"
+                 aria-label="Country"
+                 matInput
+                 [formControl]="countryControl"
+                 [matAutocomplete]="auto1">
+          <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+            <mat-option *ngFor="let option1 of filteredOptions1 | async" [value]="option1" class="chooseLanguage">
+              {{option1}}
             </mat-option>
-          </mat-select>
+          </mat-autocomplete>
         </mat-form-field>
       </div>
       <div class="value">
-        <mat-form-field>
-          <mat-label>Customer</mat-label>
-          <input matInput>
+        <mat-form-field class="example-full-width">
+          <input type="text"
+                 placeholder="State"
+                 aria-label="State"
+                 matInput
+                 [formControl]="stateControl"
+                 [matAutocomplete]="auto2">
+          <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+            <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2" class="chooseLanguage">
+              {{option2}}
+            </mat-option>
+          </mat-autocomplete>
         </mat-form-field>
+
       </div>
       <div class="value">
         <mat-form-field>
@@ -40,8 +62,21 @@
       </div>
     </div>
   </div>
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-map [latitude]="lat" [longitude]="lng"
+   (mapClick)="mapClicked($event)">
+    <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> -->
+    <agm-marker
+    *ngFor="let m of markers; let i = index"
+    (markerClick)="clickedMarker(m.label, i)"
+    [latitude]="m.lat"
+    [longitude]="m.lng"
+    [label]="m.label"
+    [markerDraggable]="m.draggable"
+    (dragEnd)="markerDragEnd(m, $event)"
+    >
+
+
+</agm-marker>
   </agm-map>
 
 </div>

@@ -16,20 +16,26 @@
     }
   }
 }
-.exportIcon {
+.filterExportWrap {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: 10px;
-  a {
+  .exportIcon {
     display: flex;
-    margin: 0 6px;
-    background-color: #fff;
-    width: 35px;
-    height: 35px;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+    justify-content: flex-end;
+    margin-top: 10px;
+    a {
+      display: flex;
+      margin: 0 6px;
+      background-color: #fff;
+      width: 35px;
+      height: 35px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgb(0 0 0 / 10%);
+    }
   }
 }
+

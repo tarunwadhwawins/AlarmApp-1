@@ -2,17 +2,35 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
+interface summeryOption {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-alarm-log',
   templateUrl: './alarm-log.component.html',
   styleUrls: ['./alarm-log.component.scss']
 })
 export class AlarmLogComponent implements OnInit {
+  value='today'
+  summeryList: summeryOption[] = [
+    {value: 'today', viewValue: 'Today'},
+    {value: '2', viewValue: 'Last 24 Hour'},
+    {value: '3', viewValue: 'Yesterday'},
+    {value: '4', viewValue: 'Last Week'},
+    {value: '5', viewValue: 'Last 7 Day'},
+    {value: '6', viewValue: 'Last Month'},
+    {value: '7', viewValue: 'Last Year '},
+
+  ];
+
+
   displayedColumns1: string[] = ['select','priority', 'timestamp', 'name','status', 'ackstatus', 'value', 'unit', 'type'];
   dataSource1 = new MatTableDataSource<PeriodicElement1>(ELEMENT_DATA1);
 
 
-  displayedColumns: string[] = ['select','priority', 'timestamp', 'name','description', 'explanation', 'action'];
+  displayedColumns: string[] = ['select','priority', 'timestamp', 'name','description' , 'acknowledge' , 'action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   selection = new SelectionModel<PeriodicElement>(true, []);
@@ -48,6 +66,9 @@ export class AlarmLogComponent implements OnInit {
         this.dataSource1.data.forEach(row => this.selection1.select(row));
   }
 
+
+
+
 }
 
 export interface PeriodicElement {
@@ -79,21 +100,21 @@ export interface PeriodicElement1 {
   timestamp: string;
   name: string;
   description:string;
-  explanation:string;
+  acknowledge:string;
   action:string;
 }
 
 const ELEMENT_DATA1: PeriodicElement1[] = [
-  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 1', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'green', timestamp:'2021/12/27 16:25:25', name: 'Alarm 2', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 3', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 4', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 5', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 6', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 7', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 8', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 9', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
-  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 10', description:'Lorem Ipsum', explanation:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 1', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'green', timestamp:'2021/12/27 16:25:25', name: 'Alarm 2', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 3', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 4', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 5', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 6', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 7', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 8', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'green', timestamp: '2021/12/27 16:25:25', name: 'Alarm 9', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
+  { priority: 'orange', timestamp: '2021/12/27 16:25:25', name: 'Alarm 10', description:'Lorem Ipsum', acknowledge:'Lorem Ipsum', action:'Lorem Ipsum'},
 ];
 
 

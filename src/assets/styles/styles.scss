@@ -47,6 +47,7 @@ button {
   min-width: 70px;
   border-radius: 5px;
   line-height: 16px;
+  cursor: pointer;
   &:hover {
     background-color: #0e65cb;
     color: #ffffff;
@@ -84,7 +85,7 @@ button {
           margin: 0;
           padding: 0;
           .mat-form-field-infix {
-            padding: 15px 0 12px;
+            padding: 12px 0 8px;
             border-top: 0;
             display: flex;
             align-items: center;
@@ -106,12 +107,13 @@ button {
         }
       }
       button {
-        padding: 15px 15px;
+        padding: 12px 15px;
         margin-right: 10px;
     }
     }
   }
 }
+
 /* header language filter */
 ::ng-deep{
   .dropDownwrappewer{
@@ -168,9 +170,38 @@ button {
       .mat-checkbox-frame {
         border-color: #fff;
       }
+      .mat-checkbox-checked,.mat-checkbox-indeterminate{
+        .mat-checkbox-background{
+          background-color: transparent;
+        }
+      }
+      .mat-sort-header-arrow {
+        color: #fff;
+      }
+      .mat-checkbox-ripple {
+        display: none;
+      }
     }
   }
+  td{
+    ::ng-deep {
+      .mat-checkbox-checked{
+        .mat-checkbox-background{
+          background-color: #2580eb;
+        }
+      }
+      .mat-checkbox-ripple {
+        display: none;
+      }
+    }
+    a{
+      color: #2580eb;
+      text-decoration: none;
+    }
+  }
+
 }
+
 table {
   box-shadow: 0px 5px 10px rgb(0 0 0 / 20%) !important;
   width: 100%;

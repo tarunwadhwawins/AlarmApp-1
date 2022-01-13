@@ -112,6 +112,7 @@ mat-sidenav-container {
     justify-content: center;
     padding: 13px 10px;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
   }
   .humburgOuter {
     margin-top: 5px;
@@ -157,7 +158,7 @@ mat-sidenav-container {
             }
           }
         }
-        &:hover{
+        &:hover,&.is-active{
           background-color: #2580eb;
           span,mat-icon{
             color: #ffffff;
