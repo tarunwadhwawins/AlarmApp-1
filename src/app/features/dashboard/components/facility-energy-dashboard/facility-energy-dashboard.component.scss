@@ -1,14 +1,19 @@
 @import '../../../../../assets/styles/styles.scss';
+@import '../../../../../assets/styles/media-queries';
 .dashboardChart {
-    // grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
     display: grid;
     grid-gap: 1.5rem;
     background-color: #ffffff;
     padding: 15px;
-    // border-radius: 10px;
     flex-wrap: wrap;
+    @include for-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include for-landscape-mobile{
+      grid-template-columns: repeat(1, 1fr);
+    }
     .graph {
       background-color: #fafafa;
       border-radius: 5px;

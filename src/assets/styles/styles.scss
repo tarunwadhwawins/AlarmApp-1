@@ -62,6 +62,9 @@ button {
     .mat-tab-header {
       border-bottom: none;
     }
+    .mat-tab-body-content {
+      background-color: #fff;
+    }
     .mat-tab-labels {
       .mat-tab-label {
         background-color: #ffffff;
@@ -129,30 +132,6 @@ button {
   }
 }
 
-/* header filter */
-.dateValues {
-  border-radius: 5px;
-  display: flex;
-  margin:20px 0 10px;
-  padding: 0px 5px;
-  width: 100%;
-  .value {
-    margin: 0 12px 0 0;
-    select, input,mat-label {
-      cursor: pointer;
-      font-size: 13px;
-      color: #918f8f;
-      padding-left: 10px;
-    }
-    ::ng-deep{
-      .mat-form-field-infix{
-        border-top: 0 !important;
-        padding: 10px 0;
-      }
-    }
-  }
-}
-
 .whiteBgWrapper {
   padding: 15px;
   height: calc(100vh - 64px);
@@ -166,6 +145,7 @@ button {
     text-shadow: none;
     letter-spacing: 0.2px;
     font-size: 13px;
+    padding: 0 10px;
     ::ng-deep {
       .mat-checkbox-frame {
         border-color: #fff;
@@ -184,6 +164,9 @@ button {
     }
   }
   td{
+    padding: 0 10px;
+    font-size: 13px;
+    min-width: 100px;
     ::ng-deep {
       .mat-checkbox-checked{
         .mat-checkbox-background{

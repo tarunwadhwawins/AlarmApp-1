@@ -1,4 +1,5 @@
 @import '../../../assets/styles/styles.scss';
+@import '../../../assets/styles/media-queries';
 
 .alarmLogWrapper {
   background-color: #fafafa;
@@ -9,11 +10,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include for-tablet {
+    align-items: flex-end;
+    flex-direction: column;
+  }
   .exportIcon {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 10px;
+    @include for-sm-mobile {
+      margin-bottom: 10px;
+    }
     a {
       display: flex;
       margin: 0 6px;
